@@ -1,7 +1,20 @@
-import React, { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import React, { useRef, useMemo, useEffect } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Float, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
+
+function CanvasCleanup() {
+  const gl = useThree((state) => state.gl);
+  useEffect(() => {
+    return () => {
+      if (gl && typeof gl.forceContextLoss === 'function') {
+        gl.forceContextLoss();
+        gl.dispose();
+      }
+    };
+  }, [gl]);
+  return null;
+}
 
 function DNAHelix() {
   const groupRef = useRef();
@@ -90,6 +103,7 @@ export default function MoleculeCanvas() {
       <pointLight position={[-3, -3, 2]} intensity={0.5} color="#c9963a" />
       <DNAHelix />
       <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
+      <CanvasCleanup />
     </Canvas>
   );
 }
