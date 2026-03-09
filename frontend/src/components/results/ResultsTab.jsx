@@ -30,6 +30,13 @@ function FactorNode({ position, color, label, size = 0.3 }) {
 function FactorEdge({ start, end }) {
   const points = useMemo(() => [new THREE.Vector3(...start), new THREE.Vector3(...end)], [start, end]);
   const geo = useMemo(() => new THREE.BufferGeometry().setFromPoints(points), [points]);
+  
+  // Explicitly dispose of this manually created geometry when it unmounts! 
+  // R3F does not auto-dispose objects passed via props or variables, only JSX nodes.
+  useEffect(() => {
+    return () => geo.dispose();
+  }, [geo]);
+
   return (
     <line geometry={geo}>
       <lineBasicMaterial color="#ffffff" opacity={0.12} transparent />
@@ -295,7 +302,7 @@ export default function ResultsTab() {
           <h2 style={{ color: 'var(--ivory)', marginBottom: 32 }}>Latent Factor <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Network</span></h2>
 
           <div style={{ height: 400, borderRadius: 18, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.07)' }}>
-            <Canvas 
+            <Canvas
               camera={{ position: [0, 0, 5], fov: 50 }}
               dpr={[1, 1.5]}
               gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
