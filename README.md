@@ -18,6 +18,12 @@
   <img src="https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js" />
 </p>
 
+<h3>
+  <a href="https://biomtl-lab.vercel.app">
+    <img src="https://img.shields.io/badge/🔴_Live_Demo-Access_Platform-blue?style=for-the-badge&color=2563EB" alt="Live Demo" />
+  </a>
+</h3>
+
 </div>
 
 ---
