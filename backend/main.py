@@ -14,7 +14,10 @@ app = FastAPI(
     description="Factorization-Driven Multi-Task Framework for Limited Biomedical Data Analysis",
     version="1.0.0",
 )
-
+# FIXED: Added the root route for Render's health check
+@app.get("/")
+async def root():
+    return {"message": "BioMTL Lab API is online", "docs": "/docs"}
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
