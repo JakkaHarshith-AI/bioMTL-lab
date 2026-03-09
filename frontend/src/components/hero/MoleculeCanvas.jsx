@@ -82,7 +82,8 @@ export default function MoleculeCanvas() {
     <Canvas
       camera={{ position: [0, 0, 6], fov: 50 }}
       style={{ position: 'absolute', inset: 0 }}
-      gl={{ antialias: true, alpha: true }}
+      dpr={[1, 1.5]}
+      gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
     >
       <ambientLight intensity={0.4} />
       <directionalLight position={[5, 5, 5]} intensity={0.8} color="#fdf3dc" />
