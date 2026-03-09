@@ -1,7 +1,5 @@
-import axios from 'axios';
+import api from '../utils/api';
 import useAppStore from '../store/appStore';
-
-const api = axios.create({ baseURL: '/api' });
 
 export function useApi() {
   const store = useAppStore();
