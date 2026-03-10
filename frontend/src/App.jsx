@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import api from './utils/api';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
@@ -54,9 +54,16 @@ function App() {
             {activeTab === 'home' && <Marquee />}
             <AnimatePresence mode="wait">
               {activeTab !== 'home' && (
-                <div key={activeTab} style={{ minHeight: '80vh', paddingTop: 100 }}>
+                <motion.div 
+                  key={activeTab} 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ minHeight: '80vh', paddingTop: 100 }}
+                >
                   {renderTab()}
-                </div>
+                </motion.div>
               )}
             </AnimatePresence>
           </main>

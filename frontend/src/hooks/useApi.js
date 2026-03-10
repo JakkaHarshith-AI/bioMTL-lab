@@ -9,7 +9,6 @@ export function useApi() {
     formData.append('file', file);
     const endpoint = type === 'auto' ? '/upload/auto' : `/upload/${type}`;
     const res = await api.post(endpoint, formData);
-    store.addToast({ type: 'success', message: `Uploaded ${res.data.dataset_type} dataset (${res.data.rows} rows)` });
     return res.data;
   };
 
