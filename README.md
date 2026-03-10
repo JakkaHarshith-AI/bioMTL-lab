@@ -201,28 +201,6 @@ Once up and running, tap into full power:
 
 </div>
 
----
-
-## 🔌 Core API Endpoints
-
-<details>
-<summary><b>Look Inside the API Canvas</b></summary>
-<br/>
-
-| Method | Endpoint | Description |
-|:--|:--|:--|
-| 🟢 `POST` | `/api/upload/auto` | Auto-detect and upload CSV |
-| 🔵 `GET` | `/api/datasets/info` | Get loaded dataset info |
-| 🟡 `POST` | `/api/train` | Start training (returns job_id) |
-| 🟣 `WS` | `/ws/train/{id}` | WebSocket for live metrics |
-| 🔴 `POST` | `/api/predict/heart` | Single heart prediction |
-| 🟠 `GET` | `/api/results` | Full evaluation results |
-| ✨ `POST` | `/api/explain` | Claude AI clinical explanation |
-
-</details>
-
----
-
 ## 🛠️ Troubleshooting
 
 If you hit a bump in the road:
