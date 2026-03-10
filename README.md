@@ -200,16 +200,6 @@ Once up and running, tap into full power:
 | **4** | 📊 **Results** | Compare models (BioMTL vs Baseline), view 3D Latent Factor Network. |
 
 </div>
-
-## 🛠️ Troubleshooting
-
-If you hit a bump in the road:
-- **`python` not found**: Use `python3` (macOS) or `py` (Windows).
-- **Socket connection fails**: Check if Backend is answering on port `8000`.
-- **Port 8000 in use**:
-  - macOS: `lsof -ti:8000 | xargs kill -9`
-  - Windows: `netstat -ano | findstr :8000` then `taskkill /PID <PID> /F`
-
 <br/>
 
 <div align="center">
