@@ -204,5 +204,5 @@ Once up and running, tap into full power:
 
 <div align="center">
   <p><b>Created by Vishnu</b> — <i>Academic & Research Minor Project</i></p>
-  <sub><i>Because beautiful data saves lives.</i></sub>
+  
 </div>
