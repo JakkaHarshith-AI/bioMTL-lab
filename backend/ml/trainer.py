@@ -58,14 +58,14 @@ class BioMTLTrainer:
                 await websocket.send_json(msg)
             return msg
 
-        # Step 2: NMF Factorization
+        
         self.factorizer = BioFactorizer(
             n_components=n_components,
             shared_ratio=shared_ratio,
         )
 
         if has_heart and has_cancer:
-            # Joint factorization
+        
             W_h_train, W_c_train = self.factorizer.fit_transform(
                 data['heart']['X_train'], data['cancer']['X_train']
             )
