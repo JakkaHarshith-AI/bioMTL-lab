@@ -200,9 +200,3 @@ Once up and running, tap into full power:
 | **4** | 📊 **Results** | Compare models (BioMTL vs Baseline), view 3D Latent Factor Network. |
 
 </div>
-<br/>
-
-<div align="center">
-  <p><b>Created by Vishnu</b> — <i>Academic & Research Minor Project</i></p>
-  
-</div>
